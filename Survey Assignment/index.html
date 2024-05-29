@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Survey Form</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <link rel="stylesheet" href="./stylesheet.css">
+    <script src="./main.js"></script>
+</head>
+<body>
+        <a href="./index.html">Fill Survey</a>
+        <a href="#" onclick="displayStats()" style="float: right;">View Survey Results</a><br>
+     <div id="stats" class="stats"></div>
+    <div id="fullForm">
+        <form id="survey-form" onsubmit="submitForm(event)">
+            <div class="form-section">
+                <label for="full-name">Full Name:</label>
+                <input type="text" id="full-name" name="full-name" required>
+            </div>
+            <div class="form-section">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-section">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+                <span id="dob-error" style="color: red; display: none;">Age must be between 5 and 120 years.</span>
+            </div>
+            <div class="form-section">
+                <label for="contact-number">Contact Number:</label>
+                <input type="tel" id="contact-number" name="contact-number" required>
+                <span id="contact-error" style="color: red; display: none;">Invalid contact number. It should be 10 digits starting with 0 or +27.</span>
+            </div>
+            <div class="form-section">
+                <div class="card">
+                    <label>What is Your Favorite Food:
+                    <label><input type="checkbox" name="favorite-foods" value="Pizza"> Pizza</label>
+                    <label><input type="checkbox" name="favorite-foods" value="Pasta"> Pasta</label>
+                    <label><input type="checkbox" name="favorite-foods" value="Pap and Wors">Pap and Wors</label>
+                    <label><input type="checkbox" name="favorite-foods" value="Other"> Other</label>
+                </label><br><br>
+            </div>
+            <div class="form-section">
+                <label>Please rate your level of agreement on a scale from 1 to 5, with 1 being "Strongly Agree" and 5 being "Strongly Disagree"</label><br>
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Strongly Agree</th>
+                            <th>Agree</th>
+                            <th>Neutral</th>
+                            <th>Disagree</th>
+                            <th>Strongly Disagree</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>I like to watch Movies</td>
+                            <td><input type="radio" name="movies" value="Strongly Agree" required></td>
+                            <td><input type="radio" name="movies" value="Agree"></td>
+                            <td><input type="radio" name="movies" value="Neutral"></td>
+                            <td><input type="radio" name="movies" value="Disagree"></td>
+                            <td><input type="radio" name="movies" value="Strongly Disagree"></td>
+                        </tr>
+                        <tr>
+                            <td>I like to listen to radio</td>
+                            <td><input type="radio" name="radio" value="Strongly Agree" required></td>
+                            <td><input type="radio" name="radio" value="Agree"></td>
+                            <td><input type="radio" name="radio" value="Neutral"></td>
+                            <td><input type="radio" name="radio" value="Disagree"></td>
+                            <td><input type="radio" name="radio" value="Strongly Disagree"></td>
+                        </tr>
+                        <tr>
+                            <td>I like to eat out</td>
+                            <td><input type="radio" name="eat-out" value="Strongly Agree" required></td>
+                            <td><input type="radio" name="eat-out" value="Agree"></td>
+                            <td><input type="radio" name="eat-out" value="Neutral"></td>
+                            <td><input type="radio" name="eat-out" value="Disagree"></td>
+                            <td><input type="radio" name="eat-out" value="Strongly Disagree"></td>
+                        </tr>
+                        <tr>
+                            <td>I like to watch TV</td>
+                            <td><input type="radio" name="tv" value="Strongly Agree" required></td>
+                            <td><input type="radio" name="tv" value="Agree"></td>
+                            <td><input type="radio" name="tv" value="Neutral"></td>
+                            <td><input type="radio" name="tv" value="Disagree"></td>
+                            <td><input type="radio" name="tv" value="Strongly Disagree"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="form-section">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+   
+</body>
+</html>
